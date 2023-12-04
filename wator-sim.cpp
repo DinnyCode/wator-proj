@@ -1,91 +1,215 @@
-// test.cpp --- 
+// wator-sim.cpp --- 
 // 
-// Filename: test.cpp
+// Filename: wator-sim.cpp
 // Description: 
-// Author: Joseph
-// Maintainer: 
-// Created: Fri Nov  3 15:51:15 2023 (+0000)
-// Last-Updated: Fri Nov  3 16:49:06 2023 (+0000)
-//           By: Joseph
-//     Update #: 19
-// 
-// 
-
-// Commentary: 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or (at
-// your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-// 
-// some helpful code here!
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// https://www.sfml-dev.org/tutorials/2.5/start-linux.php
-// https://learnsfml.com/
+// Author: Denis Perepelyuk
+// Student No.: C00259076
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Code:
 
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <SFML/Graphics.hpp>
+using namespace std;
 
-int main()
-{
-  int xdim = 100;
-  int ydim= 100;
-  int WindowXSize=800;
-  int WindowYSize=600;
-  int cellXSize=WindowXSize/xdim;
-  int cellYSize=WindowYSize/ydim;
-  //each shape will represent either a fish, shark or empty space
-  //e.g. blue for empty, red for shark and green for fish
-  sf::RectangleShape recArray[xdim][ydim];
-  for(int i=0;i<xdim;++i){
-    for(int k=0;k<ydim;++k){//give each one a size, position and color
-      recArray[i][k].setSize(sf::Vector2f(80.f,60.f));
-      recArray[i][k].setPosition(i*cellXSize,k*cellYSize);//position is top left corner!
-      int id=i*1-+k;
-      if (id%2==0) recArray[i][k].setFillColor(sf::Color::Green);
-      else recArray[i][k].setFillColor(sf::Color::Blue);
-    }
-  }
-    sf::RenderWindow window(sf::VideoMode(WindowXSize,WindowYSize), "SFML Wa-Tor world");
-   
+// ******************
+// Defining constants
+// ******************
+
+// Program parameters
+const int NUM_SHARK = 0;
+const int NUM_FISH = 0;
+const int FISH_BREED = 0;
+const int SHARK_BREED = 0;
+const int STARVE = 0;
+const int GRID_SIZE = 0;
+const int THREADS = 0;
+const int ENERGY_GAIN = 0;
+
+// Grid parameters
+const int ROWS = 0;
+const int COLUMNS = 0;
 
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
+// Visualisation sizes
+const int WINDOW_X_SIZE = 0;
+const int WINDOW_Y_SIZE = 0;
+const int CELL_X_SIZE = 0;
+const int CELL_Y_SIZE = 0;
+
+// Define colors
+const sf::Color OCEAN_COLOUR = sf::Color(30, 30, 30);
+const sf::Color FISH_COLOUR = sf::Color(0, 100, 255);
+const sf::Color SHARK_COLOUR = sf::Color(255, 50, 50);
+
+enum CellType {
+    ocean,
+    shark,
+    fish
+};
+
+class Cell {
+    private:
+        CellType cellType;
+        sf::Color colour;
+        int xPos;
+        int yPos;
+    public:
+        Cell() {}
+        Cell(int x, int y, CellType type) {
+            setCellType(type);
+            setXPos(x);
+            setYPos(y);
+            setColour();
         }
-	//loop these three lines to draw frames
-        window.clear(sf::Color::Black);
-	for(int i=0;i<xdim;++i){
-	  for(int k=0;k<ydim;++k){
-	    window.draw(recArray[i][k]);
-	  }
-	}
-        window.display();
-    }
 
-    return 0;
+        CellType getCellType() { return cellType; }
+        int getXPos() { return xPos; }
+        int getYPos() { return yPos; }
+        sf::Color getColour() { return colour; }
+        
+        void setCellType(CellType ct) { cellType = ct; }
+        void setXPos(int x) { xPos = x; }
+        void setYPos(int y) { yPos = y; }
+        void setColour() {
+            CellType ct = getCellType();
+            switch(ct) {
+                case CellType::fish:
+                    colour = FISH_COLOUR;
+                    break;
+                case CellType::shark:
+                    colour = SHARK_COLOUR;
+                    break;
+                default:
+                    colour = OCEAN_COLOUR;
+                    break;  
+            }
+        }
+
+};
+
+Cell grid[ROWS][COLUMNS];
+
+Cell* getAdjacentCells(int x, int y) {
+    // Nedd to do something for edge of grid
+    // Could use modulus for this
+    Cell north = grid[x][y+1];
+    Cell east = grid[x+1][y];
+    Cell west = grid[x-1][y];
+    Cell south = grid[x][y-1];
+
+    Cell adjacentCells[4] = { north, east, west, south };
+    return adjacentCells;
 }
 
-// 
-// test.cpp ends here
+class Ocean: public Cell {
+    private:
+    public:
+        Ocean(int x, int y) {
+            setCellType(CellType::ocean);
+            setXPos(x);
+            setYPos(y);
+            setColour();
+        }
+};
+
+class SeaCreature: public Cell {
+    private:
+        int age;
+        bool canBreed;
+        bool moved;
+    public:
+        SeaCreature() {}
+        int getAge() { return age; }
+        bool getCanBreed() { return canBreed; }
+        bool hasMoved() { return moved; }
+
+        void setAge(int a) { age = a; }
+        void move() {}
+        void breed() {}
+};
+
+
+
+class Fish: public SeaCreature {
+    private:
+    public:
+    Fish(int x, int y) {
+        setCellType(CellType::fish);
+        setXPos(x);
+        setYPos(y);
+        setColour();
+    }
+    void moveFish() {
+        bool hasMoved = false;
+        int x = getXPos();
+        int y = getYPos();
+        int direction = rand() % 4;
+        Cell* adjacentCells = getAdjacentCells(x, y);
+        
+        for(int i = 0; i < 4; i++) {
+            Cell ct = adjacentCells[i];
+
+            if(ct.getCellType() == CellType::ocean) {       
+                Cell temp = grid[x][y];
+                Ocean o = Ocean(temp.getXPos(), temp.getYPos());
+                grid[ct.getXPos()][ct.getYPos()] = o;
+                grid[ct.getXPos()][ct.getXPos()] = temp; 
+                
+                if(getCanBreed()) {
+                    setAge(0);
+                    Fish f = Fish(ct.getXPos(), ct.getYPos());
+                    grid[ct.getXPos()][ct.getXPos()] = f;
+                }
+                break;
+            }
+        }
+    }
+};
+
+class Shark: public SeaCreature {
+    private:
+        int sharkBreed;
+        int energy;
+    public:
+        Shark(int x, int y) {
+            setCellType(CellType::shark);
+            setXPos(x);
+            setYPos(y);
+            setColour();
+        }
+
+        void starve() {
+            if (energy == 0) {
+                // die -> set cell to ocean
+            }
+        }
+
+        bool hasStarved() {
+            if (energy == 0) {
+                return true;
+            }
+        }
+
+        void eat() {
+            energy += ENERGY_GAIN;
+            Ocean oc(getXPos(), getYPos());
+        }
+};
+
+// initialise grid
+void populate() {}
+
+//
+void serial(){
+    srand(static_cast<unsigned>(time(nullptr)));
+}
+
+
+void parallel(){};
+int main() {
+
+    srand(static_cast<unsigned>(time(nullptr)));
+    return 0;
+}

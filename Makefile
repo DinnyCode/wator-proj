@@ -5,7 +5,7 @@ CXX = g++ #-fopenmp
 CPPFILES = wator-sim.cpp
 CPPFLAGS = -Wall
 LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system #-libomp -fopenmp
-EXE = wator-sim
+EXE = wator-sim-test
 
 # Define where SFML is installed from Homebrew
 SFML_IMPORT = -I/opt/homebrew/Cellar/sfml/2.6.1/include
