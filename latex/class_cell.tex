@@ -1,0 +1,118 @@
+\doxysection{Cell Class Reference}
+\hypertarget{class_cell}{}\label{class_cell}\index{Cell@{Cell}}
+
+
+Base cell class.  
+
+
+Inheritance diagram for Cell\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_cell}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cell_ad4f0e1fffc6adaf2f9ea3d05f7fc6dce}{Cell}} (int x, int y, Cell\+Type type)
+\item 
+void \mbox{\hyperlink{class_cell_aa487600d8143075e0b77ba444e7c5edd}{draw}} (int x, int y)
+\item 
+Cell\+Type \mbox{\hyperlink{class_cell_a1d15d36600cf3e14fb134bca4b099884}{get\+Cell\+Type}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a3e7098675cba593610fd8e191134b5fe}{get\+XPos}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a64bde68e7aee7afb7ba11c23941843e9}{get\+YPos}} ()
+\item 
+\Hypertarget{class_cell_ad9846be1529c4cf3297d9e9a2d27985f}\label{class_cell_ad9846be1529c4cf3297d9e9a2d27985f} 
+sf\+::\+Color {\bfseries get\+Colour} ()
+\item 
+\Hypertarget{class_cell_aad1c258cb052d0cc18eae4c9a22554eb}\label{class_cell_aad1c258cb052d0cc18eae4c9a22554eb} 
+void {\bfseries set\+Cell\+Type} (Cell\+Type ct)
+\item 
+\Hypertarget{class_cell_ae2a5cbbbaf44e8890df49670ef665776}\label{class_cell_ae2a5cbbbaf44e8890df49670ef665776} 
+void {\bfseries set\+XPos} (int x)
+\item 
+\Hypertarget{class_cell_a7fa84bae0dbad280381d610f32fe77e1}\label{class_cell_a7fa84bae0dbad280381d610f32fe77e1} 
+void {\bfseries set\+YPos} (int y)
+\item 
+void \mbox{\hyperlink{class_cell_ada893e9713dbaa30d10895515e91c293}{set\+Colour}} ()
+\item 
+\Hypertarget{class_cell_af3d4f997d9476aa95a77159f331df9f1}\label{class_cell_af3d4f997d9476aa95a77159f331df9f1} 
+void {\bfseries move} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base cell class. 
+
+\begin{DoxyAuthor}{Author}
+Denis P
+\end{DoxyAuthor}
+Base \doxylink{class_cell}{Cell} class that will represent a single cell of the simulation that will either contain a fish, shark or ocean cell. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cell_ad4f0e1fffc6adaf2f9ea3d05f7fc6dce}\label{class_cell_ad4f0e1fffc6adaf2f9ea3d05f7fc6dce} 
+\index{Cell@{Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily Cell\+::\+Cell (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{Cell\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor that sets the base properties.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position within the grid array \\
+\hline
+{\em y} & Y position within the grid array \\
+\hline
+{\em type} & Type of cell to be stored in array (fish, shark or ocean. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cell_aa487600d8143075e0b77ba444e7c5edd}\label{class_cell_aa487600d8143075e0b77ba444e7c5edd} 
+\index{Cell@{Cell}!draw@{draw}}
+\index{draw@{draw}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Cell\+::draw (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Draws the cell a base colour depending on the type of cell it is.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position within the grid array \\
+\hline
+{\em y} & Y position within the grid array \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_cell_a1d15d36600cf3e14fb134bca4b099884}\label{class_cell_a1d15d36600cf3e14fb134bca4b099884} 
+\index{Cell@{Cell}!getCellType@{getCellType}}
+\index{getCellType@{getCellType}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getCellType()}{getCellType()}}
+{\footnotesize\ttfamily Cell\+Type Cell\+::get\+Cell\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the type of cell (fish, shark or ocean). \Hypertarget{class_cell_a3e7098675cba593610fd8e191134b5fe}\label{class_cell_a3e7098675cba593610fd8e191134b5fe} 
+\index{Cell@{Cell}!getXPos@{getXPos}}
+\index{getXPos@{getXPos}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getXPos()}{getXPos()}}
+{\footnotesize\ttfamily int Cell\+::get\+XPos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the x co-\/ordinate of the cell \Hypertarget{class_cell_a64bde68e7aee7afb7ba11c23941843e9}\label{class_cell_a64bde68e7aee7afb7ba11c23941843e9} 
+\index{Cell@{Cell}!getYPos@{getYPos}}
+\index{getYPos@{getYPos}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getYPos()}{getYPos()}}
+{\footnotesize\ttfamily int Cell\+::get\+YPos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the y co-\/ordinate of the cell \Hypertarget{class_cell_ada893e9713dbaa30d10895515e91c293}\label{class_cell_ada893e9713dbaa30d10895515e91c293} 
+\index{Cell@{Cell}!setColour@{setColour}}
+\index{setColour@{setColour}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{setColour()}{setColour()}}
+{\footnotesize\ttfamily void Cell\+::set\+Colour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the colour of the cell based on it\textquotesingle{}s Cell\+Type enum 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{wator-sim_8cpp}{wator-\/sim.\+cpp}}\end{DoxyCompactItemize}

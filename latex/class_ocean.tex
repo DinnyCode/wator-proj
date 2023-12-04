@@ -1,0 +1,74 @@
+\doxysection{Ocean Class Reference}
+\hypertarget{class_ocean}{}\label{class_ocean}\index{Ocean@{Ocean}}
+
+
+\doxylink{class_ocean}{Ocean} class that represents water in the simulation.  
+
+
+Inheritance diagram for Ocean\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ocean}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ocean_a94fbdcdd35035293f2b276a1096bae1b}{Ocean}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_cell}{Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cell_ad4f0e1fffc6adaf2f9ea3d05f7fc6dce}{Cell}} (int x, int y, Cell\+Type type)
+\item 
+void \mbox{\hyperlink{class_cell_aa487600d8143075e0b77ba444e7c5edd}{draw}} (int x, int y)
+\item 
+Cell\+Type \mbox{\hyperlink{class_cell_a1d15d36600cf3e14fb134bca4b099884}{get\+Cell\+Type}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a3e7098675cba593610fd8e191134b5fe}{get\+XPos}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a64bde68e7aee7afb7ba11c23941843e9}{get\+YPos}} ()
+\item 
+sf\+::\+Color {\bfseries get\+Colour} ()
+\item 
+void {\bfseries set\+Cell\+Type} (Cell\+Type ct)
+\item 
+void {\bfseries set\+XPos} (int x)
+\item 
+void {\bfseries set\+YPos} (int y)
+\item 
+void \mbox{\hyperlink{class_cell_ada893e9713dbaa30d10895515e91c293}{set\+Colour}} ()
+\item 
+void {\bfseries move} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_ocean}{Ocean} class that represents water in the simulation. 
+
+\begin{DoxyAuthor}{Author}
+Denis P
+\end{DoxyAuthor}
+Base \doxylink{class_cell}{Cell} class that will represent a single cell of the simulation that will either contain a fish, shark or ocean cell. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ocean_a94fbdcdd35035293f2b276a1096bae1b}\label{class_ocean_a94fbdcdd35035293f2b276a1096bae1b} 
+\index{Ocean@{Ocean}!Ocean@{Ocean}}
+\index{Ocean@{Ocean}!Ocean@{Ocean}}
+\doxysubsubsection{\texorpdfstring{Ocean()}{Ocean()}}
+{\footnotesize\ttfamily Ocean\+::\+Ocean (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor that sets the base properties.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position within the grid array \\
+\hline
+{\em y} & Y position within the grid array \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{wator-sim_8cpp}{wator-\/sim.\+cpp}}\end{DoxyCompactItemize}

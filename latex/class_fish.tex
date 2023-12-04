@@ -1,0 +1,103 @@
+\doxysection{Fish Class Reference}
+\hypertarget{class_fish}{}\label{class_fish}\index{Fish@{Fish}}
+
+
+\doxylink{class_fish}{Fish} Class.  
+
+
+Inheritance diagram for Fish\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_fish}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_fish_a1e7049d0a048977335797a5bdbd6a8e3}{Fish}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_fish_ad82ce65a06fd188cd4e94878097d9820}{move}} (int i, int j)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sea_creature}{Sea\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+Age} ()
+\item 
+void {\bfseries set\+Age} (int a)
+\item 
+void {\bfseries move} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_cell}{Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cell_ad4f0e1fffc6adaf2f9ea3d05f7fc6dce}{Cell}} (int x, int y, Cell\+Type type)
+\item 
+void \mbox{\hyperlink{class_cell_aa487600d8143075e0b77ba444e7c5edd}{draw}} (int x, int y)
+\item 
+Cell\+Type \mbox{\hyperlink{class_cell_a1d15d36600cf3e14fb134bca4b099884}{get\+Cell\+Type}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a3e7098675cba593610fd8e191134b5fe}{get\+XPos}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a64bde68e7aee7afb7ba11c23941843e9}{get\+YPos}} ()
+\item 
+sf\+::\+Color {\bfseries get\+Colour} ()
+\item 
+void {\bfseries set\+Cell\+Type} (Cell\+Type ct)
+\item 
+void {\bfseries set\+XPos} (int x)
+\item 
+void {\bfseries set\+YPos} (int y)
+\item 
+void \mbox{\hyperlink{class_cell_ada893e9713dbaa30d10895515e91c293}{set\+Colour}} ()
+\item 
+void {\bfseries move} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_fish}{Fish} Class. 
+
+\begin{DoxyAuthor}{Author}
+Denis P
+\end{DoxyAuthor}
+Class that will represent fish with its behavior and properties. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_fish_a1e7049d0a048977335797a5bdbd6a8e3}\label{class_fish_a1e7049d0a048977335797a5bdbd6a8e3} 
+\index{Fish@{Fish}!Fish@{Fish}}
+\index{Fish@{Fish}!Fish@{Fish}}
+\doxysubsubsection{\texorpdfstring{Fish()}{Fish()}}
+{\footnotesize\ttfamily Fish\+::\+Fish (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor of \doxylink{class_fish}{Fish} class
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X position within the grid array \\
+\hline
+{\em y} & Y position within the grid array \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_fish_ad82ce65a06fd188cd4e94878097d9820}\label{class_fish_ad82ce65a06fd188cd4e94878097d9820} 
+\index{Fish@{Fish}!move@{move}}
+\index{move@{move}!Fish@{Fish}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Fish\+::move (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Contains logic of fish moving including breeding
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & X position within the grid array \\
+\hline
+{\em j} & Y position within the grid array \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{wator-sim_8cpp}{wator-\/sim.\+cpp}}\end{DoxyCompactItemize}

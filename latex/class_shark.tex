@@ -1,0 +1,92 @@
+\doxysection{Shark Class Reference}
+\hypertarget{class_shark}{}\label{class_shark}\index{Shark@{Shark}}
+
+
+\doxylink{class_shark}{Shark} Class.  
+
+
+Inheritance diagram for Shark\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_shark}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_shark_a4ea94f8c6678e7275bb84820b2944f4c}\label{class_shark_a4ea94f8c6678e7275bb84820b2944f4c} 
+{\bfseries Shark} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_shark_aebfe48ef52dd5253cd2835e31147f5f4}{move}} (int i, int j)
+\item 
+\Hypertarget{class_shark_aa3a44c4e3955348efdec5f641f1407ea}\label{class_shark_aa3a44c4e3955348efdec5f641f1407ea} 
+int {\bfseries get\+Energy} ()
+\item 
+\Hypertarget{class_shark_ac054c5ecf64b53197259f0cb3365c173}\label{class_shark_ac054c5ecf64b53197259f0cb3365c173} 
+int {\bfseries set\+Energy} (int e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_sea_creature}{Sea\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+Age} ()
+\item 
+void {\bfseries set\+Age} (int a)
+\item 
+void {\bfseries move} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_cell}{Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cell_ad4f0e1fffc6adaf2f9ea3d05f7fc6dce}{Cell}} (int x, int y, Cell\+Type type)
+\item 
+void \mbox{\hyperlink{class_cell_aa487600d8143075e0b77ba444e7c5edd}{draw}} (int x, int y)
+\item 
+Cell\+Type \mbox{\hyperlink{class_cell_a1d15d36600cf3e14fb134bca4b099884}{get\+Cell\+Type}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a3e7098675cba593610fd8e191134b5fe}{get\+XPos}} ()
+\item 
+int \mbox{\hyperlink{class_cell_a64bde68e7aee7afb7ba11c23941843e9}{get\+YPos}} ()
+\item 
+sf\+::\+Color {\bfseries get\+Colour} ()
+\item 
+void {\bfseries set\+Cell\+Type} (Cell\+Type ct)
+\item 
+void {\bfseries set\+XPos} (int x)
+\item 
+void {\bfseries set\+YPos} (int y)
+\item 
+void \mbox{\hyperlink{class_cell_ada893e9713dbaa30d10895515e91c293}{set\+Colour}} ()
+\item 
+void {\bfseries move} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_shark}{Shark} Class. 
+
+\begin{DoxyAuthor}{Author}
+Denis P
+\end{DoxyAuthor}
+Class that will represent shark with its behavior and properties. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_shark_aebfe48ef52dd5253cd2835e31147f5f4}\label{class_shark_aebfe48ef52dd5253cd2835e31147f5f4} 
+\index{Shark@{Shark}!move@{move}}
+\index{move@{move}!Shark@{Shark}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Shark\+::move (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Contains logic of fish moving including breeding
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & X position within the grid array \\
+\hline
+{\em j} & Y position within the grid array \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{wator-sim_8cpp}{wator-\/sim.\+cpp}}\end{DoxyCompactItemize}

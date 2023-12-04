@@ -1,0 +1,159 @@
+\doxysection{wator-\/sim.cpp File Reference}
+\hypertarget{wator-sim_8cpp}{}\label{wator-sim_8cpp}\index{wator-\/sim.cpp@{wator-\/sim.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_cell}{Cell}}
+\begin{DoxyCompactList}\small\item\em Base cell class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_ocean}{Ocean}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_ocean}{Ocean} class that represents water in the simulation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_sea_creature}{Sea\+Creature}}
+\begin{DoxyCompactList}\small\item\em Parent class of fish and shark. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_fish}{Fish}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_fish}{Fish} Class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_shark}{Shark}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_shark}{Shark} Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{wator-sim_8cpp_a268ae74e98bc01a0e35f5e215580bcb4}\label{wator-sim_8cpp_a268ae74e98bc01a0e35f5e215580bcb4} 
+enum {\bfseries Cell\+Type} \{ {\bfseries ocean}
+, {\bfseries shark}
+, {\bfseries fish}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{wator-sim_8cpp_abebbf6067954edf05a937f4cdab96ee3}{populate\+Grid}} ()
+\item 
+void \mbox{\hyperlink{wator-sim_8cpp_a2c4d25c81492ed899b76da55d1d90e74}{window\+Closing}} ()
+\item 
+void \mbox{\hyperlink{wator-sim_8cpp_a1640b323872d8bcdfbe46898b8708fae}{update\+Grid}} ()
+\item 
+void \mbox{\hyperlink{wator-sim_8cpp_a994c8e6aadecdafde367234b650222fd}{render\+Sim}} ()
+\item 
+void \mbox{\hyperlink{wator-sim_8cpp_a6795b97b2b66150a426e170ee83fa145}{sequential}} ()
+\item 
+void \mbox{\hyperlink{wator-sim_8cpp_ad9ddb353ca154022020e3e9032877a2b}{parallel}} ()
+\item 
+int \mbox{\hyperlink{wator-sim_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{wator-sim_8cpp_afe47b844b299296b0bb32cb48a83cf57}\label{wator-sim_8cpp_afe47b844b299296b0bb32cb48a83cf57} 
+const int {\bfseries NUM\+\_\+\+SHARK} = 0
+\item 
+\Hypertarget{wator-sim_8cpp_a7c9b03cb07de2ca2f43442619645d3b7}\label{wator-sim_8cpp_a7c9b03cb07de2ca2f43442619645d3b7} 
+const int {\bfseries NUM\+\_\+\+FISH} = 0
+\item 
+\Hypertarget{wator-sim_8cpp_ab7efac1fb85aeb2cb8a9239ac312be80}\label{wator-sim_8cpp_ab7efac1fb85aeb2cb8a9239ac312be80} 
+const int {\bfseries FISH\+\_\+\+BREED} = 0
+\item 
+\Hypertarget{wator-sim_8cpp_abbfd16485cb8ea8c8ad1af3ca26bfca2}\label{wator-sim_8cpp_abbfd16485cb8ea8c8ad1af3ca26bfca2} 
+const int {\bfseries SHARK\+\_\+\+BREED} = 0
+\item 
+\Hypertarget{wator-sim_8cpp_a7bb9b559c120f01ddacf259865db0a6e}\label{wator-sim_8cpp_a7bb9b559c120f01ddacf259865db0a6e} 
+const int {\bfseries STARVE} = 3
+\item 
+\Hypertarget{wator-sim_8cpp_a412aaef61a623a4acb699ef4099b2491}\label{wator-sim_8cpp_a412aaef61a623a4acb699ef4099b2491} 
+const int {\bfseries GRID\+\_\+\+SIZE} = 100
+\item 
+\Hypertarget{wator-sim_8cpp_ac10525cd392b023a67f1b9f3260f87bc}\label{wator-sim_8cpp_ac10525cd392b023a67f1b9f3260f87bc} 
+const int {\bfseries THREADS} = 0
+\item 
+\Hypertarget{wator-sim_8cpp_a55e4529c0eb70be6661249e9f5aaf3d4}\label{wator-sim_8cpp_a55e4529c0eb70be6661249e9f5aaf3d4} 
+const int {\bfseries ENERGY\+\_\+\+GAIN} = 0
+\item 
+\Hypertarget{wator-sim_8cpp_a821282c3fbd7714d8302538a5a674885}\label{wator-sim_8cpp_a821282c3fbd7714d8302538a5a674885} 
+const int {\bfseries ROWS} = 100
+\item 
+\Hypertarget{wator-sim_8cpp_af6c484f782f36b472fb334e72c392801}\label{wator-sim_8cpp_af6c484f782f36b472fb334e72c392801} 
+const int {\bfseries COLUMNS} = 100
+\item 
+\Hypertarget{wator-sim_8cpp_a70e43beaef3822884ebdc835f9f60426}\label{wator-sim_8cpp_a70e43beaef3822884ebdc835f9f60426} 
+const int {\bfseries WINDOW\+\_\+\+X\+\_\+\+SIZE} = 100
+\item 
+\Hypertarget{wator-sim_8cpp_a989c574e1925810db4573a4e3af9ae57}\label{wator-sim_8cpp_a989c574e1925810db4573a4e3af9ae57} 
+const int {\bfseries WINDOW\+\_\+\+Y\+\_\+\+SIZE} = 100
+\item 
+\Hypertarget{wator-sim_8cpp_a001a5b9d2cf24e3fa0c9b65a6785c7fe}\label{wator-sim_8cpp_a001a5b9d2cf24e3fa0c9b65a6785c7fe} 
+const int {\bfseries CELL\+\_\+\+X\+\_\+\+SIZE} = 10
+\item 
+\Hypertarget{wator-sim_8cpp_a4d71c0de98a2e146bde18c98027c77e4}\label{wator-sim_8cpp_a4d71c0de98a2e146bde18c98027c77e4} 
+const int {\bfseries CELL\+\_\+\+Y\+\_\+\+SIZE} = 10
+\item 
+\Hypertarget{wator-sim_8cpp_adde5687bcb36e92d99ace7809f9a837f}\label{wator-sim_8cpp_adde5687bcb36e92d99ace7809f9a837f} 
+const sf\+::\+Color {\bfseries OCEAN\+\_\+\+COLOUR} = sf\+::\+Color(30, 30, 30)
+\item 
+\Hypertarget{wator-sim_8cpp_a267d0736a66843fdc00187ceb2ac01b7}\label{wator-sim_8cpp_a267d0736a66843fdc00187ceb2ac01b7} 
+const sf\+::\+Color {\bfseries FISH\+\_\+\+COLOUR} = sf\+::\+Color(0, 100, 255)
+\item 
+\Hypertarget{wator-sim_8cpp_a414ee073808e751d6e036860cffc3ebe}\label{wator-sim_8cpp_a414ee073808e751d6e036860cffc3ebe} 
+const sf\+::\+Color {\bfseries SHARK\+\_\+\+COLOUR} = sf\+::\+Color(255, 50, 50)
+\item 
+\Hypertarget{wator-sim_8cpp_ae90e155ced28d8d3e69df6bad6b6d893}\label{wator-sim_8cpp_ae90e155ced28d8d3e69df6bad6b6d893} 
+sf\+::\+Render\+Window {\bfseries window}
+\item 
+\Hypertarget{wator-sim_8cpp_ac85620f3d5b3fb0fbd51478d51dab304}\label{wator-sim_8cpp_ac85620f3d5b3fb0fbd51478d51dab304} 
+\mbox{\hyperlink{class_cell}{Cell}} {\bfseries grid} \mbox{[}ROWS\mbox{]}\mbox{[}COLUMNS\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Denis Perepelyuk C00259076
+\end{DoxyAuthor}
+\hypertarget{wator-sim_8cpp_LICENSE}{}\doxysubsection{\texorpdfstring{LICENSE}{LICENSE}}\label{wator-sim_8cpp_LICENSE}
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\hypertarget{wator-sim_8cpp_DESCRIPTION}{}\doxysubsection{\texorpdfstring{DESCRIPTION}{DESCRIPTION}}\label{wator-sim_8cpp_DESCRIPTION}
+Code that simulates the Wa-\/\+Tor problem. This program simulates both sequentially and concurrently. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{wator-sim_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{wator-sim_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{wator-\/sim.cpp@{wator-\/sim.cpp}!main@{main}}
+\index{main@{main}!wator-\/sim.cpp@{wator-\/sim.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main method \Hypertarget{wator-sim_8cpp_ad9ddb353ca154022020e3e9032877a2b}\label{wator-sim_8cpp_ad9ddb353ca154022020e3e9032877a2b} 
+\index{wator-\/sim.cpp@{wator-\/sim.cpp}!parallel@{parallel}}
+\index{parallel@{parallel}!wator-\/sim.cpp@{wator-\/sim.cpp}}
+\doxysubsubsection{\texorpdfstring{parallel()}{parallel()}}
+{\footnotesize\ttfamily void parallel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Runs the simulation in parallel \Hypertarget{wator-sim_8cpp_abebbf6067954edf05a937f4cdab96ee3}\label{wator-sim_8cpp_abebbf6067954edf05a937f4cdab96ee3} 
+\index{wator-\/sim.cpp@{wator-\/sim.cpp}!populateGrid@{populateGrid}}
+\index{populateGrid@{populateGrid}!wator-\/sim.cpp@{wator-\/sim.cpp}}
+\doxysubsubsection{\texorpdfstring{populateGrid()}{populateGrid()}}
+{\footnotesize\ttfamily void populate\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Populates and initialises grid \Hypertarget{wator-sim_8cpp_a994c8e6aadecdafde367234b650222fd}\label{wator-sim_8cpp_a994c8e6aadecdafde367234b650222fd} 
+\index{wator-\/sim.cpp@{wator-\/sim.cpp}!renderSim@{renderSim}}
+\index{renderSim@{renderSim}!wator-\/sim.cpp@{wator-\/sim.cpp}}
+\doxysubsubsection{\texorpdfstring{renderSim()}{renderSim()}}
+{\footnotesize\ttfamily void render\+Sim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Renders the simulation and draws the cells \Hypertarget{wator-sim_8cpp_a6795b97b2b66150a426e170ee83fa145}\label{wator-sim_8cpp_a6795b97b2b66150a426e170ee83fa145} 
+\index{wator-\/sim.cpp@{wator-\/sim.cpp}!sequential@{sequential}}
+\index{sequential@{sequential}!wator-\/sim.cpp@{wator-\/sim.cpp}}
+\doxysubsubsection{\texorpdfstring{sequential()}{sequential()}}
+{\footnotesize\ttfamily void sequential (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Runs the simulation in serial \Hypertarget{wator-sim_8cpp_a1640b323872d8bcdfbe46898b8708fae}\label{wator-sim_8cpp_a1640b323872d8bcdfbe46898b8708fae} 
+\index{wator-\/sim.cpp@{wator-\/sim.cpp}!updateGrid@{updateGrid}}
+\index{updateGrid@{updateGrid}!wator-\/sim.cpp@{wator-\/sim.cpp}}
+\doxysubsubsection{\texorpdfstring{updateGrid()}{updateGrid()}}
+{\footnotesize\ttfamily void update\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Updates grid with movement of fish and shark cells \Hypertarget{wator-sim_8cpp_a2c4d25c81492ed899b76da55d1d90e74}\label{wator-sim_8cpp_a2c4d25c81492ed899b76da55d1d90e74} 
+\index{wator-\/sim.cpp@{wator-\/sim.cpp}!windowClosing@{windowClosing}}
+\index{windowClosing@{windowClosing}!wator-\/sim.cpp@{wator-\/sim.cpp}}
+\doxysubsubsection{\texorpdfstring{windowClosing()}{windowClosing()}}
+{\footnotesize\ttfamily void window\+Closing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Checks for window closing 
